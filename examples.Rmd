@@ -24,12 +24,12 @@ dat <- read.csv("./data/polish-driver-license.csv")
 
 ```{r}
 group_by(dat, age, voivodeship) %>% 
-  summarise(total = sum(count)) %>% 
-  ggplot(aes(x = age, y = total, fill = voivodeship)) +
+  summarise(mean = mean(count)) %>% 
+  ggplot(aes(x = age, y = mean, fill = voivodeship)) +
   geom_col()  
 ```
 
-Cel: pokazanie liczby osób, które uzyskały prawo jazdy w danym wieku w zależności od województwa.
+Cel: pokazanie średniej liczby osób, które uzyskały prawo jazdy w danym wieku w zależności od województwa.
 
 
 
@@ -49,13 +49,18 @@ Cel: pokazanie liczby osób w danym wieku uzyskujących prawo jazdy w danym roku
 ## Rysunek 3
 
 ```{r}
-group_by(dat, sex, voivodeship) %>% 
+group_by(dat, month, year, voivodeship) %>% 
   summarise(total = sum(count)) %>% 
-  ggplot(aes(x = sex, y = total, shape = voivodeship)) +
-  geom_point()
+  filter(voivodeship == "WOJ. MAZOWIECKIE") %>% 
+  ggplot(aes(x = factor(year), y = total)) +
+  geom_boxplot() +
+  scale_x_discrete("Year") +
+  scale_color_discrete("Month") +
+  geom_point(aes(color = factor(month))) +
+  ggtitle("Mazowieckie")
 ```
 
-Cel: pokazanie zależności liczby uzyskanych praw jazdy w zależności od województwa i płci uzyskujących.
+Cel: pokazanie zmienności liczby uzyskanych praw jazdy w skali roku w zależności od roku w województwie mazowieckim.
 
 
 
