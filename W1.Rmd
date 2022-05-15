@@ -44,7 +44,7 @@ theme_set(theme_bw())  # pre-set the bw theme.
 
 Michał Burdukiewicz:
 
- - bioinformatyk (UAB, UMB, IBB PAN, NIZP-PZH, BTU Cottbus-Senftenberg),
+ - bioinformatyk (Universitat Autònoma de Barcelona, Uniwersytet Medyczny w Białymstoku, Narodowy Instytut Zdrowia Publicznego - Polski Zakład Higieny),
  - 14 lat doświadczenia z R,
  - Stowarzyszenie Wrocławskich Użytkowników R (stwur.pl),
  - Fundacja Why R? (whyr.pl).
@@ -62,10 +62,10 @@ Mail: michalburdukiewicz@gmail.com
 
 ## Literatura
 
- - Wilkinson, L. (2005). The Grammar of Graphics (New York: Springer-Verlag).
- - Biecek, P. (2016). Zbiór esejów o sztuce prezentowania danych Odkrywać! Ujawniać! Objaśniać!” (Warszawa: Wydawnictwo Uniwersytetu Warszawskiego).
- - Cairo, A. (2019). How Charts Lie: Getting Smarter about Visual Information
- - [Engebretsen M, Kennedy H. (2020). Data Visualization in Society](https://www.aup.nl/en/book/9789048543137/data-visualization-in-society)
+ - Wilkinson, L. (2005). The Grammar of Graphics).
+ - Cairo, A. (2019). How Charts Lie: Getting Smarter about Visual Information.
+ - Wilke, C. (2020). Podstawy wizualizacji danych. Zasady tworzenia atrakcyjnych wykresów.
+ - [Engebretsen M., Kennedy H. (2020). Data Visualization in Society](https://www.aup.nl/en/book/9789048543137/data-visualization-in-society).
  
 ## Plan spotkań
 
@@ -80,7 +80,9 @@ Mail: michalburdukiewicz@gmail.com
 
 1. **Czym są wizualizacje danych?**
 2. **Gramatyka grafiki.**
+    - Praca w podgrupach.
 3. **Błędy w wizualizacjach danych.**
+    - Praca w podgrupach.
 4. **Narzędzia do wizualizacji danych.**
 5. Efektywne projektowanie dashboardów.
 6. Zaaawansowane wizualizacje danych.
@@ -187,9 +189,9 @@ Wilkinson, L. (2005). The Grammar of Graphics (New York: Springer-Verlag).
 
 ## Gramatyka grafiki
 
-<img src="https://blog.gtwang.org/wp-content/uploads/2016/07/ggplot-grammar-of-graphics-stack-1.png" width="600px" class="center">
+<img src="https://cristoichkov.github.io/images/ggplot_add.png" width="400px" class="center">
 
-Źródło: https://blog.gtwang.org/
+Źródło: https://cristoichkov.github.io/
 
 ## Dane
 
@@ -459,7 +461,7 @@ Elementy graficzne nawiązujące do treści wzmacniają przekaz i pozwalają lep
 
 ```{r}
 dat <- read.csv("./data/polish-driver-license.csv")
-kable(dat[1L:2, ])
+kable(dat[1L:3, ])
 ```
 
  - **voivodeship**: województwo
@@ -469,7 +471,18 @@ kable(dat[1L:2, ])
  - **year**: rok
  - **month**: miesiąc
  
+## Zadanie 1
+
+W podgrupach opisać wykresy wykorzystując gramatykę grafiki. Skupiamy się na:
+
+ - atrybutach wizualnych
+ - geometriach
+ - facetach
+ - statystykach.
+ 
 Riseup: https://pad.riseup.net/p/WWD-tmp
+
+Plik: [examples.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/michbur/WizualizacjaDanych2021-2022L/main/examples.html).
 
 # Błędy w wizualizacjach 
 
@@ -582,7 +595,13 @@ Nadmiar stylizacji wykresu może zmniejszać czytelność wykresu.
 
 <a href="https://www.visualcapitalist.com/wp-content/uploads/2020/03/DeadliestPandemics-Infographic-87.jpg"><img src="https://www.visualcapitalist.com/wp-content/uploads/2020/03/DeadliestPandemics-Infographic-87.jpg" width="700px"></a>
 
-## Ocena wizualizacji danych
+## Zadanie 2
+
+W podgrupach zaproponować poprawiony wykres wykorzystując gramatykę grafiki. 
+ 
+Riseup: https://pad.riseup.net/p/WWD-tmp
+
+Plik: [examples.html](https://htmlpreview.github.io/?https://raw.githubusercontent.com/michbur/WizualizacjaDanych2021-2022L/main/examples.html).
 
 Riseup: https://pad.riseup.net/p/WWD-tmp
 
@@ -721,5 +740,19 @@ Inkscape: darmowy i otwarty edytor grafiki wektorowej.
 
  - [Oficjalny tutorial](https://inkscape.org/en/doc/basic/tutorial-basic.pl.html).
  - [Inkscape w praktyce](https://pl.wikibooks.org/wiki/Inkscape_w_praktyce).
+ 
+## Ocena wizualizacji danych
+
+VisQual: narzędzie do oceny jakości wizualizacji danych:
+
+http://visqual.info/
+
+Więcej o VisQualu:
+
+ - https://medium.com/towards-data-science/why-is-this-chart-bad-5f16da298afa
+ - https://arxiv.org/abs/2201.08684
+ 
+Autorzy: Jan Sawicki (Politechnika Warszawska), Michał Burdukiewicz.
+
 
 
